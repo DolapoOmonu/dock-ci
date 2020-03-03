@@ -3,5 +3,15 @@ services:
   - docker
 
 script:
-  - docker build -t fullstack/node .
-  - docker images fullstack/node
+  - docker build -t t2enoch7/dock-ci .
+  - docker images t2enoch7/dock-ci
+
+before_deploy:
+  - docker login -u t2enoch7 -p Apt3ch#123
+  - docker images t2enoch7/dock-ci
+
+deploy:
+  provider: script
+  script: docker push t2enoch7/dock-ci
+  on:
+    branch: master
