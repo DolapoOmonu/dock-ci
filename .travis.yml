@@ -3,5 +3,5 @@ services:
   - docker
 
 script:
-  - docker build -t docker-2020/node .
-  - docker images docker-2020/node
+  - docker build -t docker-2020/fullstack/node .
+  - docker images docker-2020/fullstack/node
